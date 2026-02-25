@@ -1,19 +1,57 @@
 "use client";
 
-import Link from "next/link";
-import { ArrowRight, Mail, Send, Sparkles } from "lucide-react";
 import { motion } from "framer-motion";
+import { ArrowRight, Mail, Send, Sparkles } from "lucide-react";
+import Link from "next/link";
 
 import styles from "./page.module.css";
 
 const highlights = [
+  { label: "Verified Skills", value: "40+" },
+  { label: "PROFESSIONAL PROJECTS", value: "6" },
+  { label: "DSA PROBLEMS SOLVED", value: "125+" },
   { label: "Users served", value: "150k+", detail: "PensionBox production users" },
   { label: "Clients onboarded", value: "100+", detail: "Corporate NPS employers" },
   { label: "Delivery latency", value: "~40% ↓", detail: "FCM notification latency" },
-  { label: "Table turnover", value: "~15% ↑", detail: "Rise restaurant ops" }
+  { label: "Table turnover", value: "~15% ↑", detail: "Rise restaurant ops" },
 ];
 
+type Highlight = (typeof highlights)[number];
+
+function titleCase(label: string) {
+  return label
+    .toLowerCase()
+    .split(" ")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+}
+
+type HeroMiniStatsProps = {
+  items: Highlight[];
+};
+
+function HeroMiniStats({ items }: HeroMiniStatsProps) {
+  return (
+    <div className={styles.miniStats}>
+      {items.map((item, index) => (
+        <div key={item.label} className={styles.miniCard} aria-label={titleCase(item.label)}>
+          {index > 0 && <span className={styles.divider} aria-hidden />}
+          <div className={styles.miniContent}>
+            <p className={styles.miniValue}>
+              {item.label.toLowerCase() === "verified skills" ? "14" : item.value}
+            </p>
+            <p className={styles.miniLabel}>{titleCase(item.label)}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
 export default function Hero() {
+  const mini = highlights.slice(0, 3);
+  const metrics = highlights.slice(3);
+
   return (
     <section className={styles.hero}>
       <div className="container">
@@ -33,8 +71,8 @@ export default function Hero() {
           </h1>
           <p className={styles.subtitle}>
             Full-Stack Software Engineer with 3+ years of hands-on experience building and scaling
-            production-grade fintech and SaaS products. Strong in React, Next.js, Node.js, REST APIs,
-            and AWS with a bias for measurable impact.
+            production-grade fintech and SaaS products. Strong in React, Next.js, Node.js, REST
+            APIs, and AWS with a bias for measurable impact.
           </p>
           <div className={styles.actions}>
             <Link href="/projects" className="button button-primary">
@@ -47,10 +85,11 @@ export default function Hero() {
               <Mail size={16} /> Email
             </a>
           </div>
+          <HeroMiniStats items={mini} />
         </motion.div>
 
         <div className={styles.highlights}>
-          {highlights.map((item) => (
+          {metrics.map((item) => (
             <div key={item.label} className="glass">
               <p className={styles.metricValue}>{item.value}</p>
               <p className={styles.metricLabel}>{item.label}</p>

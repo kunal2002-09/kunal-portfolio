@@ -42,6 +42,59 @@
   margin-top: var(--space-2);
 }
 
+.miniStats {
+  margin-top: var(--space-4);
+  display: grid;
+  grid-template-columns: 1fr;
+  border-radius: var(--radius-lg);
+  background: color-mix(in srgb, var(--color-surface) 70%, transparent);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: var(--shadow-sm);
+  backdrop-filter: blur(12px);
+  overflow: hidden;
+}
+
+.miniCard {
+  position: relative;
+}
+
+.divider {
+  position: absolute;
+  left: 0;
+  top: 16%;
+  bottom: 16%;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.08);
+  display: none;
+}
+
+.miniContent {
+  padding: var(--space-4) var(--space-5);
+  text-align: center;
+  display: grid;
+  gap: var(--space-2);
+}
+
+.miniValue {
+  font-size: clamp(2rem, 1vw + 1.8rem, 2.6rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+}
+
+.miniLabel {
+  margin-top: 2px;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: color-mix(in srgb, var(--color-text) 60%, transparent);
+}
+
+.miniStats .miniCard + .miniCard .divider {
+  display: block;
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -74,6 +127,16 @@
 .metricDetail {
   color: var(--color-subtle);
   font-size: 0.95rem;
+}
+
+@media (min-width: 640px) {
+  .miniStats {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .miniContent {
+    text-align: left;
+  }
 }
 
 .snapshot {
