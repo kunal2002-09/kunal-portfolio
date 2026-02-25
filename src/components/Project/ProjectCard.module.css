@@ -1,0 +1,60 @@
+.card {
+  padding: var(--space-6);
+  border-radius: var(--radius-lg);
+  display: grid;
+  gap: var(--space-4);
+}
+
+.meta {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.title {
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.type {
+  color: var(--color-subtle);
+  font-weight: 600;
+}
+
+.description {
+  color: var(--color-subtle);
+}
+
+.tags {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.tech {
+  display: flex;
+  gap: var(--space-2);
+  color: var(--color-subtle);
+  flex-wrap: wrap;
+}
+
+.links {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--color-text);
+  font-weight: 600;
+}

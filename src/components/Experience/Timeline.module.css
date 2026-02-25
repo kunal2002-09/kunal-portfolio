@@ -1,0 +1,69 @@
+.timeline {
+  position: relative;
+  padding-left: var(--space-6);
+  display: grid;
+  gap: var(--space-6);
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--color-border);
+}
+
+.item {
+  position: relative;
+}
+
+.marker {
+  display: none;
+  position: absolute;
+  left: -10px;
+  top: 6px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  box-shadow: 0 0 0 8px var(--color-accent-soft);
+}
+
+.content {
+  padding: var(--space-5);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.dates {
+  color: var(--color-subtle);
+  font-weight: 600;
+}
+
+.role {
+  margin: var(--space-2) 0 var(--space-1);
+  font-size: 1.1rem;
+}
+
+.company {
+  color: var(--color-subtle);
+  margin-bottom: var(--space-3);
+}
+
+.tech {
+  color: var(--color-subtle);
+  font-style: italic;
+  margin-bottom: var(--space-2);
+}
+
+.list {
+  color: var(--color-subtle);
+  display: grid;
+  gap: var(--space-2);
+  padding-left: var(--space-4);
+  list-style: disc;
+}

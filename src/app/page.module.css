@@ -1,0 +1,97 @@
+.hero {
+  padding: var(--space-10) 0 var(--space-9);
+}
+
+.heroContent {
+  max-width: 780px;
+  display: grid;
+  gap: var(--space-4);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 10px 14px;
+  border-radius: var(--radius-pill);
+  background: var(--color-accent-soft);
+  color: var(--color-accent);
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+.title {
+  font-size: clamp(2.4rem, 5vw + 1rem, 3.5rem);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.title span {
+  color: var(--color-accent);
+}
+
+.subtitle {
+  color: var(--color-subtle);
+  font-size: 1.1rem;
+}
+
+.actions {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  margin-top: var(--space-2);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-5);
+}
+
+.highlights {
+  margin-top: var(--space-6);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--space-3);
+}
+
+.highlights > div {
+  padding: var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.metricValue {
+  font-size: 1.4rem;
+  font-weight: 800;
+}
+
+.metricLabel {
+  color: var(--color-subtle);
+  font-weight: 600;
+}
+
+.metricDetail {
+  color: var(--color-subtle);
+  font-size: 0.95rem;
+}
+
+.snapshot {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--space-4);
+}
+
+.snapshot > div {
+  padding: var(--space-5);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+}
+
+.snapshot h3 {
+  margin-bottom: var(--space-2);
+}
+
+.snapshot p {
+  color: var(--color-subtle);
+}

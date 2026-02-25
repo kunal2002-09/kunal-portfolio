@@ -1,0 +1,33 @@
+.article {
+  padding: var(--space-8) 0 var(--space-9);
+  display: grid;
+  gap: var(--space-6);
+}
+
+.header {
+  display: grid;
+  gap: var(--space-2);
+  max-width: 720px;
+}
+
+.eyebrow {
+  color: var(--color-accent);
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+}
+
+.summary {
+  color: var(--color-subtle);
+}
+
+.reading {
+  color: var(--color-subtle);
+  font-weight: 600;
+}
+
+.tags {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}

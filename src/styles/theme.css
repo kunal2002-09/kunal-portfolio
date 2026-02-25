@@ -1,0 +1,55 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap");
+
+:root {
+  color-scheme: light;
+  --font-body: "Space Grotesk", "SF Pro Display", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "Berkeley Mono", "SFMono-Regular", "Menlo", monospace;
+
+  --color-bg: #f8f9fb;
+  --color-surface: #ffffff;
+  --color-muted: #e5e8ef;
+  --color-border: #d5d9e3;
+  --color-text: #0b1224;
+  --color-subtle: #4b5568;
+  --color-accent: #2563eb;
+  --color-accent-soft: rgba(37, 99, 235, 0.12);
+  --color-on-accent: #ffffff;
+
+  --shadow-sm: 0 6px 30px rgba(11, 18, 36, 0.06);
+  --shadow-md: 0 18px 60px rgba(11, 18, 36, 0.12);
+
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 18px;
+  --radius-pill: 999px;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-7: 32px;
+  --space-8: 40px;
+  --space-9: 56px;
+  --space-10: 72px;
+
+  --container-width: 1100px;
+  --transition: 180ms ease;
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+  --color-bg: #0b1224;
+  --color-surface: #111a30;
+  --color-muted: #1a2338;
+  --color-border: #1f2a41;
+  --color-text: #e8ecf6;
+  --color-subtle: #b9c2d8;
+  --color-accent: #60a5fa;
+  --color-accent-soft: rgba(96, 165, 250, 0.14);
+  --color-on-accent: #0b1224;
+
+  --shadow-sm: 0 6px 26px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 18px 52px rgba(0, 0, 0, 0.45);
+}

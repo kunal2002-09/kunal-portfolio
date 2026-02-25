@@ -1,0 +1,39 @@
+.card {
+  padding: var(--space-6);
+  border-radius: var(--radius-lg);
+  display: grid;
+  gap: var(--space-3);
+}
+
+.header {
+  display: flex;
+  gap: var(--space-3);
+  color: var(--color-subtle);
+  font-weight: 600;
+}
+
+.date,
+.reading {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.title {
+  font-size: 1.2rem;
+}
+
+.summary {
+  color: var(--color-subtle);
+}
+
+.tags {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.link {
+  font-weight: 700;
+  color: var(--color-text);
+}

@@ -1,0 +1,23 @@
+.infoGrid {
+  margin-top: var(--space-6);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--space-4);
+}
+
+.list {
+  list-style: disc;
+  padding-left: var(--space-4);
+  color: var(--color-subtle);
+  display: grid;
+  gap: var(--space-2);
+}
+
+.muted {
+  color: var(--color-subtle);
+}
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 10px;
+}
