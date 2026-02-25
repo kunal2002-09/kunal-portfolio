@@ -2,12 +2,12 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight, Mail, Send, Sparkles } from "lucide-react";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 import styles from "./page.module.css";
 
 const highlights = [
-  { label: "Verified Skills", value: "40+" },
+  { label: "VERIFIED SKILLS", value: "40+" },
   { label: "PROFESSIONAL PROJECTS", value: "6" },
   { label: "DSA PROBLEMS SOLVED", value: "125+" },
   { label: "Users served", value: "150k+", detail: "PensionBox production users" },
@@ -37,9 +37,7 @@ function HeroMiniStats({ items }: HeroMiniStatsProps) {
         <div key={item.label} className={styles.miniCard} aria-label={titleCase(item.label)}>
           {index > 0 && <span className={styles.divider} aria-hidden />}
           <div className={styles.miniContent}>
-            <p className={styles.miniValue}>
-              {item.label.toLowerCase() === "verified skills" ? "14" : item.value}
-            </p>
+            <p className={styles.miniValue}>{item.value}</p>
             <p className={styles.miniLabel}>{titleCase(item.label)}</p>
           </div>
         </div>
@@ -49,6 +47,13 @@ function HeroMiniStats({ items }: HeroMiniStatsProps) {
 }
 
 export default function Hero() {
+  const router = useRouter();
+  const goProjects = () => router.push("/projects");
+  const goContact = () => router.push("/contact");
+  const goEmail = () => {
+    window.location.href = "mailto:kunalmehla323@gmail.com";
+  };
+
   const mini = highlights.slice(0, 3);
   const metrics = highlights.slice(3);
 
@@ -75,15 +80,15 @@ export default function Hero() {
             APIs, and AWS with a bias for measurable impact.
           </p>
           <div className={styles.actions}>
-            <Link href="/projects" className="button button-primary">
+            <button type="button" className="button button-primary" onClick={goProjects}>
               View Projects <ArrowRight size={18} />
-            </Link>
-            <Link href="/contact" className="button button-secondary">
+            </button>
+            <button type="button" className="button button-secondary" onClick={goContact}>
               Contact <Send size={18} />
-            </Link>
-            <a href="mailto:kunalmehla323@gmail.com" className="button button-secondary">
+            </button>
+            <button type="button" className="button button-secondary" onClick={goEmail}>
               <Mail size={16} /> Email
-            </a>
+            </button>
           </div>
           <HeroMiniStats items={mini} />
         </motion.div>

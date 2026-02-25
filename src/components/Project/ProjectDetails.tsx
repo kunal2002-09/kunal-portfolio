@@ -1,8 +1,8 @@
 "use client";
 
-import Link from "next/link";
-import { ArrowLeft, ExternalLink } from "lucide-react";
 import { motion } from "framer-motion";
+import { ArrowLeft, ExternalLink } from "lucide-react";
+import Link from "next/link";
 
 import type { Project } from "@/content/projects";
 
@@ -32,14 +32,14 @@ export default function ProjectDetails({ project }: Props) {
           </div>
           <div className={styles.links}>
             {project.links?.live && (
-              <Link href={project.links.live} target="_blank" className="button button-primary">
+              <a href={project.links.live} target="_blank" className="button button-primary">
                 Live <ExternalLink size={16} />
-              </Link>
+              </a>
             )}
             {project.links?.repo && (
-              <Link href={project.links.repo} target="_blank" className="button button-secondary">
+              <a href={project.links.repo} target="_blank" className="button button-secondary">
                 Repository <ExternalLink size={16} />
-              </Link>
+              </a>
             )}
           </div>
         </header>
@@ -104,14 +104,14 @@ export default function ProjectDetails({ project }: Props) {
           <h3>Links</h3>
           <div className={styles.linksList}>
             {project.links?.live && (
-              <Link href={project.links.live} target="_blank" className={styles.link}>
+              <a href={project.links.live} target="_blank" className={styles.link}>
                 Live product
-              </Link>
+              </a>
             )}
             {project.links?.repo && (
-              <Link href={project.links.repo} target="_blank" className={styles.link}>
+              <a href={project.links.repo} target="_blank" className={styles.link}>
                 Repository
-              </Link>
+              </a>
             )}
           </div>
         </section>

@@ -1,0 +1,123 @@
+.wrapper {
+  position: relative;
+  padding: var(--space-9) 0;
+}
+
+.glow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at 30% 20%,
+    rgba(96, 165, 250, 0.18),
+    rgba(96, 165, 250, 0.04) 40%,
+    transparent 55%
+  );
+  filter: blur(60px);
+  opacity: 0.8;
+  z-index: 0;
+}
+
+.header {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: var(--space-2);
+  margin-bottom: var(--space-6);
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-weight: 700;
+  color: var(--color-accent);
+  font-size: 0.8rem;
+}
+
+.title {
+  font-size: clamp(1.8rem, 2vw + 1rem, 2.4rem);
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  color: var(--color-subtle);
+  max-width: 680px;
+}
+
+.grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+
+.card {
+  background: color-mix(in srgb, var(--color-surface) 70%, transparent);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+  box-shadow: var(--shadow-sm);
+  backdrop-filter: blur(14px);
+  padding: var(--space-5);
+  display: grid;
+  gap: var(--space-4);
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition),
+    border-color var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: color-mix(in srgb, var(--color-accent) 30%, rgba(255, 255, 255, 0.12));
+}
+
+.cardHeader {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--color-text);
+}
+
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.pill {
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--color-muted);
+  color: color-mix(in srgb, var(--color-text) 85%, transparent);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  min-width: 80px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    background var(--transition),
+    border-color var(--transition),
+    transform var(--transition);
+}
+
+.pill:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+@media (min-width: 640px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

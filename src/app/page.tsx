@@ -1,3 +1,4 @@
+import CoreExpertise from "@/components/CoreExpertise/CoreExpertise";
 import ProjectCard from "@/components/Project/ProjectCard";
 import Section from "@/components/Section/Section";
 import { projects } from "@/content/projects";
@@ -17,15 +18,16 @@ export default function HomePage() {
   return (
     <>
       <Hero />
+      <CoreExpertise />
 
       <Section
         eyebrow="Featured Work"
         title="Projects that move the needle"
-      description="A sample of recent builds focused on data products, design systems, and developer platforms."
-    >
-      <div className={styles.grid}>
-        {featured.map((project) => (
-          <ProjectCard key={project.slug} project={project} />
+        description="A sample of recent builds focused on data products, design systems, and developer platforms."
+      >
+        <div className={styles.grid}>
+          {featured.map((project) => (
+            <ProjectCard key={project.slug} project={project} />
           ))}
         </div>
       </Section>

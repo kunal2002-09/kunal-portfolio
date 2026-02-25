@@ -1,8 +1,9 @@
 "use client";
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { clsx } from "clsx";
+import type { Route } from "next";
+import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
 
 import ThemeToggle from "@/components/ThemeToggle/ThemeToggle";
 import { siteConfig } from "@/content/site";
@@ -15,12 +16,13 @@ const links = [
   { href: "/experience", label: "Experience" },
   { href: "/skills", label: "Skills" },
   { href: "/blog", label: "Blog" },
-  { href: "/contact", label: "Contact" }
-];
+  { href: "/contact", label: "Contact" },
+] satisfies { href: Route; label: string }[];
 
 export default function Navbar() {
+  const router = useRouter();
   const pathname = usePathname();
-
+  const goContact = () => router.push("/contact");
   return (
     <header className={styles.wrapper}>
       <div className="container">
@@ -42,9 +44,9 @@ export default function Navbar() {
           </nav>
           <div className={styles.actions}>
             <ThemeToggle />
-            <Link href="/contact" className="button button-primary">
+            <button type="button" className="button button-primary" onClick={goContact}>
               Contact
-            </Link>
+            </button>
           </div>
         </div>
       </div>

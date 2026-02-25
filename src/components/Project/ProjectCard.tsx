@@ -1,8 +1,8 @@
 "use client";
 
-import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
+import Link from "next/link";
 
 import type { Project } from "@/content/projects";
 
@@ -42,14 +42,14 @@ export default function ProjectCard({ project }: Props) {
             Case study <ArrowUpRight size={16} />
           </Link>
           {project.links?.repo && (
-            <Link href={project.links.repo} target="_blank" className={styles.link}>
+            <a href={project.links.repo} target="_blank" rel="noreferrer" className={styles.link}>
               Code <ArrowUpRight size={16} />
-            </Link>
+            </a>
           )}
           {project.links?.live && (
-            <Link href={project.links.live} target="_blank" className={styles.link}>
+            <a href={project.links.live} target="_blank" rel="noreferrer" className={styles.link}>
               Live <ArrowUpRight size={16} />
-            </Link>
+            </a>
           )}
         </div>
       </div>
